@@ -4,6 +4,16 @@ tqdm>=4.65.0
 openai>=1.0.0
 rich>=13.0.0
 
+# Async dependencies for performance optimization
+aiohttp>=3.9.0
+asyncio-throttle>=1.0.2
+aioredis>=2.0.0
+
+# Additional async utilities
+aiofiles>=23.0.0
+aiodns>=3.0.0
+cchardet>=2.1.7
+
 # Development dependencies
 pylint>=3.0.0
 flake8>=7.0.0
