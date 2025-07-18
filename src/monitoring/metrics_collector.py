@@ -322,7 +322,7 @@ class MetricsCollector(AsyncContextManager):
         """Background task to clean up old metric data."""
         while True:
             try:
-                await asyncio.sleep(300)  # Run every 5 minutes
+                await asyncio.sleep(5)  # Run every 5 seconds for testing
                 
                 cutoff_time = datetime.now() - timedelta(hours=24)
                 

@@ -7,12 +7,12 @@ rich>=13.0.0
 # Async dependencies for performance optimization
 aiohttp>=3.9.0
 asyncio-throttle>=1.0.2
-aioredis>=2.0.0
+redis>=5.0.0
 
 # Additional async utilities
 aiofiles>=23.0.0
 aiodns>=3.0.0
-cchardet>=2.1.7
+psutil>=5.9.0
 
 # Development dependencies
 pylint>=3.0.0
