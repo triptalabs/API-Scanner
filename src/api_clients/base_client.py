@@ -134,6 +134,14 @@ class BaseAsyncClient(AsyncContextManager):
                         service=self.__class__.__name__
                     )
                 
+                # Handle secondary rate limits (GitHub specific)
+                if response.status == 403 and 'secondary rate limit' in (await response.text()).lower():
+                    raise RateLimitError(
+                        "Secondary rate limit exceeded",
+                        retry_after=30,
+                        service=self.__class__.__name__
+                    )
+                
                 # Handle other HTTP errors
                 if response.status >= 400:
                     error_body = await response.text()
